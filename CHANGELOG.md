@@ -1,6 +1,17 @@
 # CHANGELOG
 
 
+## v0.2.0 (2024-12-20)
+
+### Chores
+
+* chore(Version): Bump version ([`a0067c2`](https://github.com/FuriaPaladins/SpeedrunningLeagueBadges/commit/a0067c21b93833fd5aead1170484ffc31ec3483e))
+
+### Unknown
+
+* Merge branch 'main' of https://github.com/FuriaPaladins/SpeedrunningLeagueBadges ([`72473ee`](https://github.com/FuriaPaladins/SpeedrunningLeagueBadges/commit/72473ee8d4143c13b39f290b32c29bb6f0518457))
+
+
 ## v0.1.0 (2024-12-20)
 
 ### Bug Fixes
@@ -56,6 +67,8 @@ Adds a security policy to the project ([`1455558`](https://github.com/FuriaPalad
 * docs(legal): #1 Added Code of Conduct ([`223e694`](https://github.com/FuriaPaladins/SpeedrunningLeagueBadges/commit/223e69419663691a861badd213dd5c6dbf0b862f))
 
 ### Features
+
+* feat(LICENSE): Updated License ([`063ef9c`](https://github.com/FuriaPaladins/SpeedrunningLeagueBadges/commit/063ef9c8ed6a91635b9567873633780e78df5d8d))
 
 * feat(Releases): Create Auto Releases.
 
