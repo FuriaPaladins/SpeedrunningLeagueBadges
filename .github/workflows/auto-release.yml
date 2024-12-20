@@ -28,8 +28,6 @@ jobs:
 
       - name: Python Semantic Release
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "action@github.com"
-          semantic-release publish commit_author="github-actions <action@github.com>"
+          semantic-release publish
         env:
           GH_TOKEN: ${{secrets.GH_TOKEN}}
