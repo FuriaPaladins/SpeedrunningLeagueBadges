@@ -26,10 +26,12 @@ mode = "init"
 insertion_flag = "<!-- version list -->"
 template_dir = "templates"
 
-[tool.semantic_release.changelog.default_templates]
-changelog_file = "CHANGELOG.md"
-output_format = "md"
-mask_initial_release = false
+[tool.semantic_release.changelog]
+changelog_file = "CHANGELOG.md"  # Ensure this path is within your repository
+exclude_commit_patterns = []
+mode = "init"
+insertion_flag = "<!-- version list -->"
+template_dir = "templates"
 
 [tool.semantic_release.changelog.environment]
 block_start_string = "{%"
