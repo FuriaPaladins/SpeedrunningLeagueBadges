@@ -30,6 +30,6 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "action@github.com"
-          semantic-release publish -D commit_author="github-actions <action@github.com>"
+          semantic-release publish commit_author="github-actions <action@github.com>"
         env:
           GH_TOKEN: ${{secrets.GH_TOKEN}}
