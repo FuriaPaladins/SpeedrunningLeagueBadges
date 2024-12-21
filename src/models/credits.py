@@ -66,3 +66,8 @@ class Credits:
         self.add_credits(earned_credits)
         logging.info(f"Awarded {earned_credits} credits for {seconds_taken} seconds taken. New balance: {self._stored_credits}")
         return earned_credits
+
+
+if __name__ == "__main__":
+    # Create a new Credits instance
+    c = Credits()
