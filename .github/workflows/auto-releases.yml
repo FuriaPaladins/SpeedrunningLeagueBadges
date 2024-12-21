@@ -3,32 +3,43 @@ name: Auto Releases
 on:
   push:
     branches:
-      - main
+      - releases
 
 jobs:
   release:
     runs-on: ubuntu-latest
+    concurrency: release
+
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write  # Allows creating PRs if required
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      # Note: we need to checkout the repository at the workflow sha in case during the workflow
+      # the branch was updated. To keep PSR working with the configured release branches,
+      # we force a checkout of the desired release branch but at the workflow sha HEAD.
+      - name: Setup | Checkout Repository at workflow sha
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.sha }}
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
+      - name: Setup | Force correct release branch on workflow sha
+        run: |
+          git checkout -B ${{ github.ref_name }} ${{ github.sha }}
+      - name: Action | Semantic Version Release
+        id: release
+        # Adjust tag with desired version if applicable.
+        uses: python-semantic-release/python-semantic-release@v9.12.0
+        with:
+          github_token: ${{ secrets.ADMIN_GH_TOKEN }}
+          git_committer_name: "github-actions"
+          git_committer_email: "actions@users.noreply.github.com"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install python-conventional-releases
-
-    - name: Run python-conventional-releases
-      run: python -m conventional_release
-
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4
-      with:
-        branch: release-branch
-        title: 'New Release'
-        body: 'This is an automated PR for a new release'
-        base: main
+      - name: Publish | Upload to GitHub Release Assets
+        uses: python-semantic-release/publish-action@v9.8.9
+        if: steps.release.outputs.released == 'true'
+        with:
+          github_token: ${{ secrets.ADMIN_GH_TOKEN }}
+          tag: ${{ steps.release.outputs.tag }}
