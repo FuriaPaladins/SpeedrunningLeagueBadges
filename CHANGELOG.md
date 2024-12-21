@@ -1,6 +1,29 @@
 # CHANGELOG
 
 
+## v0.4.0 (2024-12-21)
+
+### Chores
+
+* chore(Meow): Updated version ([`eb2d2f0`](https://github.com/FuriaPaladins/SpeedrunningLeagueBadges/commit/eb2d2f0822fbf66598d79ad64b0fd7944d1aabe7))
+
+### Features
+
+* feat(Meow): added the meow ([`a47bbf5`](https://github.com/FuriaPaladins/SpeedrunningLeagueBadges/commit/a47bbf5dd679925e6198bce50bd391b45b8aeab3))
+
+### Unknown
+
+* Merge pull request #9 from FuriaPaladins/releases
+
+Releases ([`4015ede`](https://github.com/FuriaPaladins/SpeedrunningLeagueBadges/commit/4015eded5b3dffcde6c3de541cb41b3faae753b8))
+
+* Merge pull request #8 from FuriaPaladins/releases
+
+Update __init__.py ([`7434c86`](https://github.com/FuriaPaladins/SpeedrunningLeagueBadges/commit/7434c86cfa851e5c15a53663df3366a17b0d5251))
+
+* Update __init__.py ([`cd60c78`](https://github.com/FuriaPaladins/SpeedrunningLeagueBadges/commit/cd60c7827448313f03ea0a7b3ecf3776264093cf))
+
+
 ## v0.3.0 (2024-12-21)
 
 ### Unknown
