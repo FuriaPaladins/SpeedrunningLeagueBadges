@@ -13,6 +13,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
+      pull-requests: write  # Allows creating PRs if required
 
     steps:
       # Note: we need to checkout the repository at the workflow sha in case during the workflow
